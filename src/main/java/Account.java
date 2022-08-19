@@ -23,7 +23,7 @@ public class Account {
             }
         }
 
-        return (name.length() > 3 && name.length() < 19) && (count > 0) && !(name.startsWith(" ") || name.endsWith(" "));
+        return (name.length() >= 3 && name.length() <= 19) && (count > 0) && !(name.startsWith(" ") || name.endsWith(" "));
 
     }
 }

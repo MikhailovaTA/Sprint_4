@@ -31,7 +31,7 @@ public class AccountTests {
     }
 
     @Test
-    public void check() {
+    public void checkName() {
         Account account = new Account(name);
         assertEquals("ОК", expectedResult, account.checkNameToEmboss());
     }
