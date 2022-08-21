@@ -1,29 +1,20 @@
 public class Account {
 
-    private final String name;
+    public final String name;
 
     public Account(String name) {
         this.name = name;
     }
 
     public boolean checkNameToEmboss() {
-        /*
-             Этот метод должен проверять, что сохранённая через конструктор строка соответствует требованиям.
-             Если строка удовлетворяет условиям, метод возвращает true, иначе — false.
-         */
-        char someChar = ' ';
-        int count = 0;
-
-        for (int i = 0; i < name.length(); i++) {
-            if (name.charAt(i) == someChar) {
-                count++;
-            }
-            if (count > 1){
-                return false;
-            }
+        if (name == null){
+            return false;
         }
+        int spaceIndex = name.indexOf(' ');
 
-        return (name.length() >= 3 && name.length() <= 19) && (count > 0) && !(name.startsWith(" ") || name.endsWith(" "));
-
+        boolean isLengthValid = name.length() <= 19 && name.length() >= 3;
+        boolean isSpaceOne = spaceIndex == name.lastIndexOf(' ');
+        boolean isEndSpacesNotExist = spaceIndex > 0 && spaceIndex + 1 != name.length();
+        return isLengthValid && isSpaceOne && isEndSpacesNotExist;
     }
 }
