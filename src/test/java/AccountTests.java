@@ -24,8 +24,8 @@ public class AccountTests {
             {" HeiArnold", false},
             {"HeiArnold ", false},
             {"He", false},
-            {"HeiArnolaaaaaaaaaaaaaaaaaaad", false},
-            {"HeiArnoldjghujhgthg", false},
+            {"Hei Arnoldjghujhgthg", false},
+            {"Hei Arnoldjghujhgt", true},
             {"Hei  Arnold", false},
             {null, false},
             {"", false}
